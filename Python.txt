@@ -1,0 +1,928 @@
+Python
+
+
+1) Numbers - Floating point assignment has binary fraction (representation error). So 0.1+0.2-0.3 never equals 0.0
+
+7/4 = 1.75
+7//4 = 1 (rounds off)
+
+
+2) Variables
+lowercase
+Dynamic
+
+3) Strings
+
+Indexing
+
+ex = 'Hello'
+
+ex[1:] = ello
+ex[:3] = Hel (Note: Upto index 3 not including)
+ex[::2] = Hlo
+ex[::-1] = olleH
+ex[:-1] = Hell (except last letter)
+
+Strings are immutable meaning once created cannot be changed
+ex = Hello
+ex[0] = 't' throws a error
+
+name = 'Kalai'
+print(f'My name is {name}') fstrings supported from python 3.6
+print('My name is {}'.format(name)) formatted strings
+
+Out:
+My name is Kalai 
+My name is Kalai
+
+4) Lists
+
+Lists are Mutable and ordered sequence.
+Lists can be flexible with lengths, data types thus better than arrays
+my_list = [1,'kali', 'a']
+
+5) Dictionaries
+Mappings are a collection of objects stored by a key 
+whereas the sequences like lists are stored by their index
+Unordered sequence - Need not know the index of the element but cannot be sorted
+Dict can hold list and another dict
+
+my_dict = {'k1': 12 , 'k2': [1,3,4] , 'k3': {'k4': 100}}
+
+keys, values and items
+
+
+5) Tuples
+
+Similar to lists, but Immutable like Strings
+Paranthesis are used to denote the Tuples
+
+Use tuples to present things that shouldn't be changed, such as days of the week, or dates on a calendar.
+
+my_tuple = (1, 'abc' , 789)
+
+
+6) Sets 
+
+Unordered collection of unique elements
+sets are represented in {} like dictionaries except that they dont have key 
+
+7) Boolean
+
+True or False
+None placeholder
+We can use None as a placeholder for an object that we don't want to reassign yet:
+
+8) Files
+
+myfile = open('myfile.txt')
+
+myfile.read() reads lines grab all strings including \n
+myfile.seek(0) resets the cursor back to start point
+myfile.readlines() returns a list where each string represents a lines
+myfile.close()
+
+9) Comparison operators
+
+2.0 == 2 True
+'2' == 2 False
+
+10) Python statements
+Python is so heavily driven by code indentation and whitespace.
+
+The statement is ended with a colon, and
+whitespace is used (indentation) to describe what takes place in case of the statement.
+
+If statement
+
+if, elif and else
+
+for loops are used as iterator
+
+Can iterate over strings, lists, tuples, and even built-in iterables for dictionaries, such as keys or values.
+
+_ is used when the variables are not used inside the loop.
+
+for _ in the range(5):
+    print('less than 5')
+
+while loops
+
+break,continue and pass
+
+break: Breaks out of the current closest enclosing loop.
+continue: Goes to the top of the closest enclosing loop.
+Forces the loop to start at the next iteration
+pass: Does nothing at all. There is no code to execute here
+
+11) Useful Operators
+
+range - generator function with start,stop,step as parameter
+What is a generator? Its a special type of function that will generate information and not need to save it to memory
+
+enumerate - for counting the index
+
+zip - for merging two lists together
+
+input - returns a string
+
+List comprehension
+
+lst = [x for x in 'word']
+lst
+
+['w','o','r','d']
+
+lst = [x for x in range(11) if x % 2 == 0]
+
+[0, 2, 4, 6, 8, 10]
+
+lst = [ x**2 for x in [x**2 for x in range(11)]]
+
+[0, 1, 16, 81, 256, 625, 1296, 2401, 4096, 6561, 10000]
+
+12) Methods and function
+
+Methods are functions built-into objects like list,Strings,Tuple,etc 
+
+Functions are used to avoid repeatedly not using the same code again and again
+'''
+DOCSTRINGS are used to define the function.
+Input and Output are usually included
+for maintaining Python Enhancement Proposal[PEP] 8 standards
+'''
+
+13) Map, lambda and Filter
+
+Map a function to an iterable object
+
+def square(num):
+    return num**2
+my_nums = [1,2,3,4,5]
+list(map(square,my_nums))
+[1, 4, 9, 16, 25]
+
+Filter - Meaning you need to filter by a function that returns either True or False
+
+def check_even(num):
+    return num % 2 == 0
+nums = [0,1,2,3,4,5,6,7,8,9,10]
+list(filter(check_even,nums))
+[0, 2, 4, 6, 8, 10]
+
+
+lambda expression
+
+create anonymous or ad-hoc function without need for the def function
+for squaring 
+my_nums = [1,2,3,4,5]
+list(map(lambda num: num ** 2, my_nums))
+[1, 4, 9, 16, 25]
+
+Scope
+
+LEGB Rule:
+
+L: Local — Names assigned in any way within a function (def or lambda), and not declared global in that function.
+
+E: Enclosing function locals — Names in the local scope of any and all enclosing functions (def or lambda), from inner to outer.
+
+G: Global (module) — Names assigned at the top-level of a module file, or declared global in a def within the file.
+
+B: Built-in (Python) — Names preassigned in the built-in names module : open, range, SyntaxError,...
+
+
+14) *args for positional arguments
+and **kwargs for keyword arguments
+
+You can pass `*args` and `**kwargs` into the same function, but `*args` have to appear before `**kwargs
+
+15) Object Oriented Programming
+
+Classes are blueprints of objects
+
+consists of methods and attributes
+
+User defined objects are created using class keyword
+
+class starts with Capital letter name
+
+Attribute is the characteristic of the object
+Method is the operation we can perform with the object
+
+simple class example;
+
+class Dog():
+    species='mammal'  --> Class object attribute
+    def __init__(self,breed):
+        self.breed=breed
+
+sam = Dog('Pomeranian')
+tina = Dog('p***')
+
+sam.breed
+pomeranian
+
+tina.breed
+p***
+
+Note how we don't have any parentheses after breed; 
+this is because it is an attribute and doesn't take any arguments.
+
+Class object attribute is defined outside of any methods in the class
+
+Methods are functions defined inside the body of a class
+
+class Circle:
+    pi = 3.14
+
+    # Circle gets instantiated with a radius (default is 1)
+    def __init__(self, radius=1):
+        self.radius = radius 
+        self.area = radius * radius * Circle.pi
+
+    # Method for resetting Radius
+    def setRadius(self, new_radius):
+        self.radius = new_radius
+        self.area = new_radius * new_radius * self.pi
+
+    # Method for getting Circumference
+    def getCircumference(self):
+        return self.radius * self.pi * 2
+
+
+c = Circle()
+
+print('Radius is: ',c.radius)
+print('Area is: ',c.area)
+print('Circumference is: ',c.getCircumference())
+
+Radius is:  1
+Area is:  3.14
+Circumference is:  6.28
+
+
+Inheritance
+Inheritance is a way to form new classes using classes that have already been defined
+
+Base classes and Derived classes
+For code reuse and reduction of complexity of a program
+
+Derived classes override or extend the functionality of base classes.
+
+class Animal:  --------------------------> Base Class
+    def __init__(self):
+        print("Animal created")
+
+    def whoAmI(self):
+        print("Animal")
+
+    def eat(self):
+        print("Eating")
+
+
+class Dog(Animal): --------------------------> Derived class
+    def __init__(self):
+        Animal.__init__(self)
+        print("Dog created")
+
+    def whoAmI(self):
+        print("Dog")
+
+    def bark(self):
+        print("Woof!")
+        
+d = Dog()
+
+out:
+Animal created
+Dog created
+
+d.whoAmI()
+Dog
+
+d.eat()
+Eating
+
+d.bark()
+Woof!
+
+Polymorphism:
+
+polymorphism refers to the way in which different object
+classes can share the same method name, and those methods
+can be called from the same place even though a variety of different objects might be passed in.
+
+Function overloading and Operator overloading
+
+class Dog:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        return self.name+' says Woof!'
+    
+class Cat:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        return self.name+' says Meow!' 
+    
+niko = Dog('Niko')
+felix = Cat('Felix')
+
+print(niko.speak())
+print(felix.speak())
+        
+
+Niko says Woof!
+Felix says Meow!
+
+A more common practice is to use abstract classes and inheritance. An abstract class is one that never expects to be instantiated.
+
+class Animal:
+    def __init__(self, name):    # Constructor of the class  ----------------------> Abstract class ie it will never be instantiated but extended
+        self.name = name
+
+    def speak(self):              # Abstract method, defined by convention only
+        raise NotImplementedError("Subclass must implement abstract method")
+
+
+class Dog(Animal):
+    
+    def speak(self):
+        return self.name+' says Woof!'
+    
+class Cat(Animal):
+
+    def speak(self):
+        return self.name+' says Meow!'
+    
+fido = Dog('Fido')
+isis = Cat('Isis')
+
+print(fido.speak())
+print(isis.speak())
+
+
+For example, we will never have an Animal object, only Dog and Cat objects, although Dogs and Cats are derived from Animals:
+
+
+        
+Special Methods
+
+represented by __ followed by __
+
+ex: __len__ returns length, __str__ returns string object like print statement
+
+class Book:
+    def __init__(self, title, author, pages):
+        print("A book is created")
+        self.title = title
+        self.author = author
+        self.pages = pages
+
+    def __str__(self):
+        return "Title: %s, author: %s, pages: %s" %(self.title, self.author, self.pages)
+
+    def __len__(self):
+        return self.pages
+
+    def __del__(self):
+        print("A book is destroyed")
+        
+book = Book("Python Rocks!", "Jose Portilla", 159)
+
+#Special Methods
+print(book)
+print(len(book))
+del book
+
+A book is created
+Title: Python Rocks!, author: Jose Portilla, pages: 159
+159
+A book is destroyed
+
+
+
+Object oriented programming
+
+The rule of thumb is, don't introduce a new attribute outside of the __init__ method
+
+two types of attributes: Class object attributes (defined outside the init method) 
+and normal attributes (defined within the  init method)
+
+similarly two types of methods: instance methods (that has access to self) and the static methods (that has no access to self) (edited) 
+
+class Car(object):
+    wheels = 4          ------------------------->   class object attribute
+    def __init__(self, make, model):
+        self.make = make
+        self.model = model
+mustang = Car('Ford', 'Mustang')
+print mustang.wheels
+# 4
+print Car.wheels
+
+    ...
+    @staticmethod 
+at    def make_car_sound():  ---------------------------> static method denoted by decorator @staticmethod keyword
+        print 'VRooooommmm!'
+
+A variant of static method is class method
+
+...
+    @classmethod
+    def is_motorcycle(cls):    -------------------> Another class is passed as parameter with classmethod keyword... Similar to inheritance
+        return cls.wheels == 2
+
+
+Inheritance
+
+Base class and derived class
+
+For say, we have Vehicle as base class
+
+motorbike, car, and truck be its derived class
+
+A Vehicle doesn't have a base_sale_price, only the individual child classes like Car and Truck do. The issue is that Vehicle should really be an Abstract Base Class. Abstract Base Classes are classes that are only meant to be inherited from; you can't create instance of an ABC.
+
+from abc import ABCMeta, abstractmethod
+class Vehicle(object):
+    """A vehicle for sale by Jeffco Car Dealership.
+    Attributes:
+        wheels: An integer representing the number of wheels the vehicle has.
+        miles: The integral number of miles driven on the vehicle.
+        make: The make of the vehicle as a string.
+        model: The model of the vehicle as a string.
+        year: The integral year the vehicle was built.
+        sold_on: The date the vehicle was sold.
+    """
+    __metaclass__ = ABCMeta --------------------------->  To make sure this is an Abstract Base Class.  virtual method is one that the ABC says must exist in child classes, but doesn't necessarily actually implement
+    base_sale_price = 0
+    def sale_price(self):
+        """Return the sale price for this vehicle as a float amount."""
+        if self.sold_on is not None:
+            return 0.0  # Already sold
+        return 5000.0 * self.wheels
+    def purchase_price(self):
+        """Return the price for which we would pay to purchase the vehicle."""
+        if self.sold_on is None:
+            return 0.0  # Not yet sold
+        return self.base_sale_price - (.10 * self.miles)
+    @abstractmethod
+    def vehicle_type():
+        """"Return a string representing the type of vehicle this is."""
+        pass
+
+
+class Car(Vehicle):
+    """A car for sale by Jeffco Car Dealership."""
+    base_sale_price = 8000
+    wheels = 4
+    def vehicle_type(self):
+        """"Return a string representing the type of vehicle this is."""
+        return 'car'
+        
+class Truck(Vehicle):
+    """A truck for sale by Jeffco Car Dealership."""
+    base_sale_price = 10000
+    wheels = 4
+    def vehicle_type(self):                  ------------------------------------------> Abstract method is implemented in the child class
+        """"Return a string representing the type of vehicle this is."""
+        return 'truck'                                                                                                                                
+
+class Motorcycle(Vehicle):
+    """A motorcycle for sale by Jeffco Car Dealership."""
+    base_sale_price = 4000
+    wheels = 2
+    def vehicle_type(self):
+        """"Return a string representing the type of vehicle this is."""
+        return 'motorcycle'                                                                                           
+
+Abstraction is the key to understanding inheritance
+
+Attributes: Instead of using the normal statements to access attributes, you can use the following functions −
+The getattr(obj, name[, default]) − to access the attribute of object.
+The hasattr(obj,name) − to check if an attribute exists or not.
+The setattr(obj,name,value) − to set an attribute. If attribute does not exist, then it would be created.
+The delattr(obj, name) − to delete an attribute.
+
+Inheritance 
+
+class Parent:        # define parent class
+   parentAttr = 100
+   def __init__(self):
+      print "Calling parent constructor"
+   def parentMethod(self):
+      print 'Calling parent method'
+   def setAttr(self, attr):
+      Parent.parentAttr = attr
+   def getAttr(self):
+      print "Parent attribute :", Parent.parentAttr
+      
+class Child(Parent): # define child class
+   def __init__(self):
+      print "Calling child constructor"
+   def childMethod(self):
+      print 'Calling child method'
+c = Child()          # instance of child
+c.childMethod()      # child calls its method
+c.parentMethod()     # calls parent's method
+c.setAttr(200)       # again call parent's method
+c.getAttr()          # again call parent's method
+
+Calling child constructor
+Calling child method
+Calling parent method
+Parent attribute : 200
+
+Similar way, you can drive a class from multiple parent classes as follows −
+
+class A:        # define your class A
+.....
+class B:         # define your class B
+.....
+class C(A, B):   # subclass of A and B
+.....
+
+issubclass() or isinstance() functions to check a relationships of two classes and instances.
+
+issubclass(subclass,superclass) returns True if subclass is derived from superclass
+
+isinstance(object,class) returns True if the object is the instance of the class
+
+Method overriding
+
+#!/usr/bin/python
+class Parent:        # define parent class
+   def myMethod(self):
+      print 'Calling parent method'
+class Child(Parent): # define child class
+   def myMethod(self):
+      print 'Calling child method'
+c = Child()          # instance of child
+c.myMethod()         # child calls overridden method
+
+Calling child method
+
+Operator Overloading
+
+class Vector:
+   def __init__(self, a, b):
+      self.a = a
+      self.b = b
+   def __str__(self):
+      return 'Vector (%d, %d)' % (self.a, self.b)
+   def __add__(self,other):
+      return Vector(self.a + other.a, self.b + other.b)
+v1 = Vector(2,10)
+v2 = Vector(5,-2)
+print v1 + v2
+
+Vector(7,8)
+
+Data Hiding
+
+class JustCounter:
+   __secretCount = 0
+   def count(self):
+      self.__secretCount += 1
+      print self.__secretCount
+counter = JustCounter()
+counter.count()
+counter.count()
+print counter.__secretCount
+
+1
+2
+Traceback (most recent call last):
+   File "test.py", line 12, in <module>
+      print counter.__secretCount
+AttributeError: JustCounter instance has no attribute '__secretCount'
+
+This is because Python protects those members by internally changing the name to include the class name.
+
+It can be accessed by print counter._JustCounter__secretCount
+
+2
+
+
+Modules and pacakages
+
+Modules are simple .py file
+
+To create a module of your own, simply create a new .py file with the module name, and then import it using the Python file name (without the .py extension) using the import command. (edited) 
+
+Exploring built in modules
+
+dir and help commands can be used
+
+print(dir(math)) (edited) 
+
+['__doc__', '__loader__', '__name__', '__package__', '__spec__', 'acos', 'acosh', 'asin', 'asinh', 'atan', 'atan2', 'atanh', 'ceil', 'copysign', 'cos', 'cosh', 'degrees', 'e', 'erf', 'erfc', 'exp', 'expm1', 'fabs', 'factorial', 'floor', 'fmod', 'frexp', 'fsum', 'gamma', 'gcd', 'hypot', 'inf', 'isclose', 'isfinite', 'isinf', 'isnan', 'ldexp', 'lgamma', 'log', 'log10', 'log1p', 'log2', 'modf', 'nan', 'pi', 'pow', 'radians', 'sin', 'sinh', 'sqrt', 'tan', 'tanh', 'tau', 'trunc']
+1:51
+Packages are the collection of modules with a special module init.py
+
+If we create a directory called foo, which marks the package name, we can then create a module inside that package called bar. We also must not forget to add the _init_.py file inside the foo directory.
+
+import foo.bar
+
+Kalaiselvan Panneerselvam  2:05 PM
+Pip Install Packages or Pip Install Python
+
+https://pypi.org/
+
+PyPIPyPI
+PyPI · The Python Package Index
+The Python Package Index (PyPI) is a repository of software for the Python programming language. (13 kB)
+https://pypi.org/static/images/twitter.90915068.jpg
+main repository for 3rd party Python packages
+
+
+
+Errors and Exception Handling 
+
+try:
+   You do your operations here...
+   ...
+except ExceptionI:
+   If there is ExceptionI, then execute this block.
+except ExceptionII:
+   If there is ExceptionII, then execute this block.
+   ...
+else:
+   If there is no exception then execute this block.
+finally: 
+    Always execute this block no matter if or not there is an exception
+    
+Unit Testing:
+
+Pylint - basic styling(PEP8 style) and error checks
+unittest - advanced
+
+
+Decorators
+
+Decorators are used to decorate a function
+
+suppose if we wanna reuse a function with additional
+functionalities, we wrap the function_that_needs a decorator
+with a decorating function to increase the code reusability
+Mainly used in flask and Django web framework development
+
+def n(func):
+
+    def wrap_func():
+        print("Code would be here, before executing the func initial code")
+
+        func()
+
+        print("Code here will execute after the func() final code")
+
+    return wrap_func
+
+@n ======> Decorator
+def func_needs_decorator():
+    print("This function is in need of a Decorator")
+    
+    
+func_needs_decorator()    
+
+Code would be here, before executing the func initial code
+This function is in need of a Decorator
+Code here will execute after the func() final code
+
+
+Awareness of decorators in Web Frameworks
+
+A framework is a type of software library that provides generic functionality which
+can be extended by the programmer to build applications. Flask and Django are good examples of frameworks intended for web development.
+
+whereas An API is a piece of software that a developer can use in his or her application
+
+
+Iterators and Generators
+
+Generators are like functions except that it does not store anythong in memory and uses yield keyword instead of return
+
+When compiled it becomes a iteration object
+they don't actually return a value and then exit.
+Instead, generator functions will automatically suspend and resume their execution and state around the last point of value generation
+
+def genfibon(n):
+    """
+    Generate a fibonnaci sequence up to n
+    """
+    a = 1
+    b = 1
+    for i in range(n):
+        yield a   ---------------> Indicates it as a generator function
+        a,b = b,a+b
+
+To convert objects that are iterable into iterators themselves
+lst_iter=iter([1,2,3])
+
+next(lst_iter)
+1
+
+Generators are Memory Efficient
+
+Iterables
+When you create a list, you can read its items one by one. Reading its items one by one is called iteration
+
+
+These iterables are handy because you can read them as much as you wish,
+but you store all the values in memory and this is not always what you want when you have a lot of values
+
+whereas,
+
+Generators are iterators, a kind of iterable you can only iterate over once. 
+Generators do not store all the values in memory, they generate the values on the fly
+
+lists, strings, files and generators are iterables
+
+Iterables are any objects you can get an iterator from. Iterators are objects that let you iterate on iterables
+
+In the below example mylist is an iterable.
+It invokes iter(mylist) which returns an iterator object
+and the iterator object is iterated using next(iter(mylist)) method.
+
+mylist = [x*x for x in range(3)]
+for i in mylist:
+    print(i)
+
+0
+1
+4
+
+Calling a list again returns the value ie List can be accessed n number of times
+
+for i in mylist:
+    print(i)
+ 
+0
+1
+4
+
+Generators are just the same except you use () instead of []
+Whereas generators can be called only once!!!!!
+
+>>> mygenerator = (x*x for x in range(3))
+>>> for i in mygenerator:
+...    print(i)
+
+0
+1
+4
+
+for i in mygenerator:
+    print(i)
+  
+returns nothing
+
+**************************************************
+
+Collections
+
+Mutant version of built in objects
+
+such as list,dict,tuple,set
+
+from collections import Counter
+
+lst = [1,2,2,2,2,3,3,3,1,2,1,12,3,2,32,1,21,1,223,1]
+Counter(lst)
+
+Counter({1: 6, 2: 6, 3: 4, 12: 1, 32: 1, 21: 1, 223: 1})
+
+counter can be used for lists and strings
+
+sum(c.values())                 # total of all counts
+c.clear()                       # reset all counts
+list(c)                         # list unique elements
+set(c)                          # convert to a set
+dict(c)                         # convert to a regular dictionary
+c.items()                       # convert to a list of (elem, cnt) pairs
+Counter(dict(list_of_pairs))    # convert from a list of (elem, cnt) pairs
+c.most_common()[:-n-1:-1]       # n least common elements
+c += Counter()                  # remove zero and negative counts
+
+Default dict
+The standard dict will raise an error if the key that is not present is executed
+But with the defaultdict
+Any key that does not exist gets the value returned by the default factory
+from collections import defaultdict
+d = {}
+d['one']
+---------------------------------------------------------------------------
+KeyError                                  Traceback (most recent call last)
+<ipython-input-36-924453a5f45e> in <module>
+----> 1 d['one']
+KeyError: 'one'
+d  = defaultdict(object)
+d['one']
+<object at 0x7f23d14401b0
+for item in d:
+    print(item)
+one
+************************************
+Named Tuple
+The standard tuple uses numerical indexes to access its members
+t = (12,13,14) (edited) 
+t[0]
+12
+whereas
+A namedtuple assigns names, as well as the numerical index, to each member.
+from collections import namedtuple
+You can basically think of namedtuples as a very quick way of creating a new object/class type with some attribute fields. For example:
+Dog = namedtuple('Dog',['age','breed','name'])
+sam = Dog(age=2,breed='Lab',name='Sammy')
+frank = Dog(age=2,breed='Shepard',name="Frankie")
+sam.age
+2
+sam[0]
+2
+*********************************
+Moving files
+shutil package
+shutil.move
+Deleting
+os.unlink(path) which deletes a file at the path your provide
+os.rmdir(path) which deletes a folder (folder must be empty) at the path your provide
+shutil.rmtree(path) this is the most dangerous, as it will remove all files and folders contained in the path. 
+os.walk does walkthrough files, folders and subfles
+
+
+******************************
+Date time module
+
+Regex
+re.search
+re.findall
+
+re.finditer
+for match in re.finditer("phone", 'my phone is a new phone'):
+    print(match.span())
+(3, 8)
+(18, 23)
+Character	Description	Example Pattern Code	Exammple Match
+\d	A digit	file_\d\d	file_25
+\w	Alphanumeric	\w-\w\w\w	A-b_1
+\s	White space	a\sb\sc	a b c
+\D	A non digit	\D\D\D	ABC
+\W	Non-alphanumeric	\W\W\W\W\W	*-+=)
+\S	Non-whitespace	\S\S\S\S	Yoyo
+r'mypattern'
+
+re.compile
+
+The Wildcard Character
+re.findall(r".at","The cat in the hat sat here.")
+['cat', 'hat', 'sat']
+# Starts with a number
+re.findall(r'^\d','1 is the loneliest number.')
+# Ends with a number
+re.findall(r'\d$','This ends with a number 4')
+**^** symbol in conjunction with a set of brackets **[]**
+Exclusion
+re.findall(r'[^\d]+',phrase)
+test_phrase = 'This is a string! But it has punctuation. How can we remove it?'
+re.findall('[^!.? ]+',test_phrase)
+clean = ' '.join(re.findall('[^!.? ]+',test_phrase))
+'This is a string But it has punctuation How can we remove it'
+Brackets for Grouping
+text = 'Only find the hypen-words in this sentence. But you do not know how long-ish they are'
+re.findall(r'[\w]+-[\w]+',text)
+['hypen-words', 'long-ish']
+Timing the code
+time
+timeit
+%%time magic fn
+Zipping and Unzipping'
+
+Kalaiselvan Panneerselvam  3:25 PM
+***************************************
+13. Web scraping
+requests
+beautifulsoup bs4
+lxml to decipher the request
+Commands
+*************************************************************888
+Syntax to pass to the .select() method
+Match Results
+soup.select('div')
+All elements with the <div> tag
+soup.select('#some_id')
+The HTML element containing the id attribute of some_id
+soup.select('.notice')
+All the HTML elements with the CSS class named notice
+soup.select('div span')
+Any elements named <span> that are within an element named <div>
+soup.select('div > span')
+Any elements named <span> that are directly within an element named <div>, with no other element in between
+
+
+
+

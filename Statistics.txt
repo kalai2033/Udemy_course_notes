@@ -1,0 +1,513 @@
+STATISTICS
+
+Popualtion - Collection of all items that are in interest. Numbers
+obtained are called parameters
+
+Sample - a subset of population. Represented by n. Numbers obtained are
+called as statistics
+
+
+Popualtion is hard to observe and contact, but sample is easy to observe. A sample
+must be random and representative.
+
+
+Various types of Data:
+
+1) Categorical = categories or groups (yes or no)
+2) Numerical = Discrete (Grades) or continuous (Weight)
+
+Measurement levels:
+
+1) Qualititative - Ordinal(Ordered categories like rating 1 to 5) or Nominal(categories not number unordered) 
+2) Quantitative - Intervals or Ratios
+
+Both are numbers
+Ratios have real zero.
+Intervals doesnt have true zero and cant be expressed as ratios.
+Example: Temperature
+5 C or 41 F - Day 1
+10 C or 50 F - Day 2
+
+In terms of Celsius , Day 1 is twice colder than Day 2. But in 
+terms of fahrenheit it is not the same cause 0 c or 0 F doesnt
+have true zero.
+
+Whereas Kelvin has true zero . -273.15 C or -459.69 F. Therefore,
+Kelvin can be expressed as ratio.
+
+**********************************
+
+
+Different types of graph
+
+ 1) Categorical
+ 
+ a) Frequency distribution table - Number of each units
+ b) Bar Chart - visualizing the frequency distribution table
+ c) Pie chart - Relative frequency. percentage of each items.
+ Commonly used for market share.
+ d) paretto diagram- ordered bar diagram in descending order
+ with a curve showing cumulative frequency .
+ 
+ Paretto diagram how each subtotal changes with each additional 
+ category
+ 
+
+ 2) Numerical
+ 
+ convert it into intervals with equal widths
+ and calcualte the frequency.
+ Then the relative frequency is
+ calculated by frequency/total items
+ 
+ Histograms are used to represent the numerical data.
+ It can be calcualted for unequal widths as well. eg. Age
+ 
+ *************************************************
+ 
+ 
+How to represent graphs using two variables
+
+
+1) Categorical
+
+Cross Tables
+
+Side by side bar chart
+
+2) Numerical
+
+Scatter plot
+
+******************************************
+Measures of Central Tendency 
+
+Mean
+
+simple avg
+mu for population
+x bar for sample
+Affected by outliers
+
+Median
+Order the data in asc
+select the datapoint (n+1)/2 where n is the total observation
+
+Mode
+can be zero, one or many
+most frequently occuring item
+
+Measures of Asymmetry
+
+Skewness indicates whether the data is concentrated on one side.
+Median greater than mean.
+Positive skew indicates that a tail is in the right
+Mean greater than median.
+Negative skew indicates that a tail is in the left
+No skew --> mean = median= mode
+
+
+Measures of variability
+
+Variance
+population formula
+- denoted by Sigma square
+- divided by N
+Sample formula
+- denoted by S square
+- divided by n-1
+
+In most cases, the results are very large since squaring
+Therefore,
+Standard deviation is introduced
+
+
+Coefficient of variation = std deviation/mean
+works across different datasets
+
+pop cv = sigma/mu
+sample cv = S/xbar
+
+Measures of relationship between variables
+
+Covariance
+
+for sample covariance,
+S(x,y) = ((x-xbar)*(y-ybar))/n-1
+
+Pop covariance --> divided by N
+sam covariance --> divided by n-1 
+
+positive correlation > 0 indicates clear relationship
+Negative correlation < 0 indicates negative relationship
+correlation = 0 No relationship
+
+Like Variance, covariance produces larger values
+
+Therefore correlation coefficient is introduced
+to intuitively interpret the results.
+
+corr = cov(x,y)/(std. dev(x) * std. dev(y))
+
+Correlation does not imply causation
+ie action of causing something
+
+
+
+What is a distribution?
+
+All the possible values a variable can take
+and the probability of their occurence
+
+Normal distribution
+
+can hold variables with large enough sample sizes
+statistics can be computed elegantly
+Decisions based on normal distribution has good track record
+
+Represented as N ~ (mu, sigma square)
+
+Standard normal distribution
+
+z ~ (0,1)
+
+Mean of 0 and variance of 1
+
+represented by z = x- mu / sigma
+
+Central Limit Theorem
+
+Sampling distribution
+     Discriptive statistics with single sample is sub optimal.
+	 
+Therefore many samples from the population are drawn
+and it forms a normal distribution even though the 
+distribution of the population is not normal.
+
+It is 
+
+N ~ (mu, sigma square/ sample size(n))
+
+If sample size is large, the statistical results are more accurate
+
+in general more than 30 sample size is desired 
+
+
+Stanadard error 
+is the standard deviation of the sampling distribution
+
+std error = sigma/ sqrt(n)
+
+Estimator and estimate
+
+point estimate and confidence interval estimate
+
+point estimate lies in between confidence estimate
+
+sample mean x bar is the estimator to estimate Mu 
+
+Bias and efficiency is the characterictics of estimator
+
+Confidence interval
+=
+[point estimate - reliability factor * std error,
+point estimate + reliability factor * std error]
+
+pont estimate = x bar
+reliability factor = Z alpha/2 (critical value)
+
+2.5% of Z is 1.96
+
+The normal distribution for 95% confidence looks like
+
+- 2.5% Z  95% confidence 2.5% Z
+
+
+Student's T distribution
+
+The Student’s T distribution approximates the Normal distribution
+but has fatter tails. This means the probability of values 
+being far away from the mean is bigger. For big enough samples, 
+the Student’s T distribution coincides with the Normal distribution. 
+
+
+When population variance is known, ie sigma is known,
+normal distribution with Z statistics is used
+
+But when population variation is not known, then T statistics is 
+used
+
+
+A higher statistic increases the ME. A higher standard deviation 
+increases the ME. A higher sample size decreases the ME.
+
+FInally,
+
+The more observation in the sample,
+the higher the chances of getting
+a good idea about the true mean of the
+entire population.
+
+************************
+
+
+Confidence intervals for samples from different population
+
+a) Dependent 
+
+Samples taken from same person but at different time (Before and after) 
+
+
+b) Independent
+
+population variance known - Use Z statistics
+population variance unknown - a) assumed to be equal
+Use T - statistics with pooled variance
+and b) assumed to be different 
+ex: comparing apples and oranges
+Special formula is used
+
+
+
+**********************************
+
+
+Hypothesis Testing
+
+Formulate a hypothesis
+Find the right test
+Execute the test
+Make a decision
+
+Hypothesis is an idea or claim that can be
+investigated or tested.
+
+Null hypothesis denoted by H0
+Alternative hypothesis denoted by HA
+
+
+Null is the present state of affairs or status quo
+Alternative is our personal opinion.
+It is the currently accepted parameter.
+
+The concept of null hypothesis is similar to the concept
+of innocent until proven guilty
+
+The null hypothesis is the statement that we 
+are trying to prove wrong.
+
+
+
+Usually, the researcher's opinion implies having a "change" , "difference" or "having effect" . Thus it is placed in the alternative hypothesis.
+
+If the opinion implies some  "equality",  "status quo", or "no change", that statement is placed under the null hypothesis.
+
+It is important to place the equality statement under null hypothesis as it is needed in setting the alpha value and p value as well.
+
+
+H0 and HA are always mathematically opposite
+
+Significance level
+
+The null hypothesis can be rejected even if it is true using
+Significance level.
+
+It is the probability of rejecting the null hypothesis
+Denoted by alpha with values 0.01,0.05,0.1
+
+Steps to testing:
+Calculate statistics x bar
+Scale it normalize z 
+check if z is in the rejection region
+
+If the test value falls into the rejection region,
+ you will reject the null hypothesis. 
+ 
+
+
+Errors in hypothesis testing
+
+Type 1 error - caused by the significance level selected by alpha
+                False positive
+
+Type 2 error - caused by dataset sampling line n and sigma  
+                  False negative
+				  
+
+Practical examples of hypothesis testing
+
+1) calcualte mean
+2)Use the known pop variance and use z-statistics (or)
+calculate sample variance when pop variance is unknown and use t-statistics
+3) calcualte std error
+4) find z or t score
+5) verify if abs(z or t score) > z or t critical value @ given significance level alpha
+and reject the null hypothesis, and vice - versa
+6) Another method is to use p-value
+
+P-value:
+It is the common method of testing the hypothesis
+
+Smallest level of significance at which we can still reject the null 
+hypothesis, given the observed sample statistics
+
+Alternative to using predefined significance level like alpha 0.05, 0.1, 0.01
+
+p-value = 1 - value from z table
+
+Reject the null hypothesis if 
+p-value < alpha
+  
+Finding p-value manually
+
+1- value from table >= for one sided test
+(1- value from table) x 2 >= for two sided test
+
+The closer the p-value to zero, the better
+
+Works for all distribution
+
+
+
+As a rule of thumb, what t-score do researchers believe to be sufficiently significant for a T-test?
+
+2
+
+for Z test
+
+it is 4
+
+
+Practical examples
+
+If the values of one sample doesnt reveal other sample,
+then they are independent.
+
+Regression analysis is used to perform finding dependency of the samples
+
+
+Linear regression
+
+Correlation doesnt imply causation
+symmetry
+explains the relationship
+
+
+whereas 
+
+Regression
+
+explains cause and effect
+one variable affects the other
+one way
+
+
+Sum of squares Total (SST) = SSR(regression) + SSE(error)
+Total variability in the dataset = Explained variability + unexplained variability
+
+
+Measure of Regression
+
+The R-squared shows how much of the total 
+variability of the dataset is explained by 
+your regression model. This may be expressed as:
+how well your model fits your data.
+
+R-squared = SSR/SST
+
+between 0 and 1
+
+Ordinary Least Squares
+
+Most common method to explain linear regression
+
+other methods include
+GLS
+MLE
+BR
+
+Multiple linear regression
+
+Many independent variables and
+one dependent variable
+
+Like the R-squared, the adjusted R-squared measures how well your model fits the data. However, it penalizes the use of variables
+that are meaningless for the regression.
+
+Adjusted R2 is always < R-squared
+
+Almost always, the adjusted R-squared is smaller than the R-squared. The statement is not true only in the extreme occasions of small sample
+sizes and a high number of independent variables.
+
+Trade off between explanatory power and simplicity
+
+F-statistic
+
+follows f distribution
+Overall model significance
+
+Lower the f statistic ,
+the closer the significance of the model
+
+
+Assumptions of Linear regression model
+
+1) Linearity
+
+the variables in the data should form a linear relationship.
+If the data is not linear, then transformations are performed
+to convert a quadratic relationship to linear.
+
+2) No endogenity
+variable x is correlated to error terms
+therefore unused varible is correlated to errror (Omitted variable bias)
+cov of error and xstar is zero
+
+Omitted variable bias occurs when you forget to include a variable. This is reflected
+in the error term as the factor you forgot about is included in the error.
+In this way, the error is not random but includes a systematic part (the omitted variable).
+
+3) Normality and homoscedasticity
+
+Assume normality of the error terms
+
+Apply CLT if normality doesnt exists
+
+N ~ (0, sigma square)
+
+Homocedasticity - Equal variance
+
+Heterodasticity - Higher variance. 
+Eg: High variability in eating habits of poor and rich people
+
+Log transform if Heterodasticity exists
+
+4) No autocorrelation
+
+Errors cannot be correlated
+
+Autocorrelation exists in Time series data
+
+Eg: Day of the week effect
+High returns on Fridays and 
+Low returns on Monday
+
+Here the error for Monday is downwards
+and errors for Friday is biased upwards when plotting the error term
+
+No remedy
+
+A common way to detect autocorrelation is to plot the error terms in a plot and
+see if there is any relationship
+
+Avoid linear regression in autocorrelation settings
+
+5) No Multicollinearity
+
+two or more variables have high correlations
+
+Easy to find by taking correlation between each two pairs of independent variables
+
+Solution: Drop anyone of the variables
+
+
